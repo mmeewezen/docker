@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  mc:
+    image: itzg/minecraft-server
+    tty: true
+    stdin_open: true
+    ports:
+      - "25568:25565"
+    environment:
+      EULA: "TRUE"
+      HARDCORE: "TRUE"
+      #SEED: "-2298785201084904961"
+      MAX_PLAYERS: 10
+      #ENABLE_COMMAND_BLOCK: "TRUE"
+      #VIEW_DISTANCE: 7
+
+    volumes:
+      - mc-data:/data
+
+volumes:
+  mc-data:
